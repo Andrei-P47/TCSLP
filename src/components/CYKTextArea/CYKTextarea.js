@@ -13,10 +13,10 @@ function CYKTextarea() {
     <div className="flex flex-row">
       <div className="w-1/4 p-4 max-h-screen">
         <div className="flex flex-col mb-3 mt-6">
-          <label className="block text-gray-500 font-bold  pr-4">Word</label>
+          <label className="block font-bold  pr-4">Cuvantul</label>
           <div className="w-full">
             <input
-              className="bg-gray-100 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="bg-gray-100 border-2 border-gray-200 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="inline-full-name"
               type="text"
               value={wordInput}
@@ -27,10 +27,10 @@ function CYKTextarea() {
           </div>
         </div>
         <div className="flex flex-col mb-3 mt-6">
-          <label className="block text-gray-500 font-bold pr-4">Grammar</label>
+          <label className="block font-bold pr-4">Gramatica</label>
           <div className="w-full">
             <textarea
-              className="resize-none hover:resize-y max-h-[80vh] bg-gray-100 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-40"
+              className="resize-none hover:resize-y max-h-[80vh] bg-gray-100 border-2 border-gray-200 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-40"
               id="inline-full-name"
               type="text"
               value={grammarInput}
@@ -47,7 +47,7 @@ function CYKTextarea() {
             className="shadow bg-black w-full hover:bg-gray-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
           >
-            Generate Table
+            Tabel
           </button>
         </div>
       </div>

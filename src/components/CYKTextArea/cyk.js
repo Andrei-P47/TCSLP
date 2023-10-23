@@ -79,7 +79,7 @@ function CYK(props) {
   return (
     <div className="mx-auto mb-3 mt-3">
       <div className="h-full flex p-6 rounded-lg">
-        <table className="">
+        <table>
           <tbody>
             <tr>
               {Array.from(word).map((letter, index) => {
@@ -109,11 +109,11 @@ function CYK(props) {
       <div
         className={
           isInGrammar
-            ? "mx-auto mb-5 text-green-500"
-            : "mx-auto mb-5 text-red-500"
+            ? "mx-auto mb-5 text-green-500 p-6"
+            : "mx-auto mb-5 text-red-500 p-6"
         }
       >
-        {isInGrammar ? "Good." : "Not Good."}
+        {isInGrammar ? "Bun." : "Nu e bun."}
       </div>
     </div>
   );
