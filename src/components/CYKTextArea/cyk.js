@@ -17,10 +17,9 @@ function CYK(props) {
   });
 
   tokens = tokens.map((line) => {
-    let trimmedLine = line.map((token) => {
+    return line.map((token) => {
       return token.trim();
     });
-    return trimmedLine;
   });
 
   let tokenMap = {};
@@ -78,7 +77,35 @@ function CYK(props) {
   }
 
   return (
-    <>
+    <div className="mx-auto mb-3 mt-3">
+      <div className="h-full flex p-6 rounded-lg">
+        <table className="">
+          <tbody>
+            <tr>
+              {Array.from(word).map((letter, index) => {
+                return (
+                  <td key={index} className="px-6 py-2 font-bold">
+                    {letter}
+                  </td>
+                );
+              })}
+            </tr>
+            {table.reverse().map((t1, index) => {
+              return (
+                <tr key={index}>
+                  {t1.map((t2, index) => {
+                    return (
+                      <td key={index} className="border px-8 py-4">
+                        {t2.join(", ")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div
         className={
           isInGrammar
@@ -86,41 +113,9 @@ function CYK(props) {
             : "mx-auto mb-5 text-red-500"
         }
       >
-        {isInGrammar
-          ? "Word belongs to the grammar."
-          : "Word does not belongs to the grammar."}
+        {isInGrammar ? "Good." : "Not Good."}
       </div>
-      <div className="mx-auto mb-3 mt-3">
-        <div className="min-w-min max-w-lg flex p-6 shadow-md bg-gray-50 rounded-lg">
-          <table className="table-fixed">
-            <tbody>
-              <tr>
-                {Array.from(word).map((letter, index) => {
-                  return (
-                    <td key={index} className="px-6 py-2 font-bold">
-                      {letter}
-                    </td>
-                  );
-                })}
-              </tr>
-              {table.reverse().map((t1, index) => {
-                return (
-                  <tr key={index}>
-                    {t1.map((t2, index) => {
-                      return (
-                        <td key={index} className="border px-8 py-4">
-                          {t2.join(", ")}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }
 
