@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/cyk" element={<CYKTextarea />} />
-        <Route path="/" element={<EpsilonRemovalComponent />} />
+        <Route path="/epsilon" element={<EpsilonRemovalComponent />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
