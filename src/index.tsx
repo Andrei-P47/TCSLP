@@ -7,6 +7,7 @@ import CYKTextarea from "./components/CYKTextArea/CYKTextarea";
 import EpsilonRemovalComponent from "./components/RemoveEpsilon/RemoveEpsilon";
 import SingularRuleEliminationComponent from "./components/RemoveSingularRules/RemoveSingularRules";
 import UnreachableSymbolEliminationComponent from "./components/RemoveUnreachableSymbol/RemoveUnreachableSymbol";
+import UnreachableSymbolRemovalComponent from "./components/RemoveInaccesibleSymbol";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -21,7 +22,14 @@ root.render(
           path="/singulare"
           element={<SingularRuleEliminationComponent />}
         />
-        <Route path="/" element={<UnreachableSymbolEliminationComponent />} />
+        <Route
+          path="/neproductive"
+          element={<UnreachableSymbolEliminationComponent />}
+        />
+        <Route
+          path="/inaccesibile"
+          element={<UnreachableSymbolRemovalComponent />}
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
