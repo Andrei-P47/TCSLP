@@ -4,6 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CYKTextarea from "./components/CYKTextArea/CYKTextarea";
+import EpsilonRemovalComponent from "./components/RemoveEpsilon/RemoveEpsilon";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -12,7 +13,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CYKTextarea />} />
+        <Route path="/cyk" element={<CYKTextarea />} />
+        <Route path="/" element={<EpsilonRemovalComponent />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
