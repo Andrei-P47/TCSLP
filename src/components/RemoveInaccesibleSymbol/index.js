@@ -77,8 +77,8 @@ const UnreachableSymbolRemovalComponent = () => {
     L: ["IX", "abA"],
     X: ["dL"],
     I: ["abA"],
-    A: ["YY"],
-    Y: ["A"],
+    A: ["dY", "d"],
+    Y: ["cA", "abA"],
   });
 
   const [modifiedGrammar, setModifiedGrammar] = useState(null);

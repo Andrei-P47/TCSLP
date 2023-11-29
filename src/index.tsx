@@ -8,6 +8,9 @@ import EpsilonRemovalComponent from "./components/RemoveEpsilon/RemoveEpsilon";
 import SingularRuleEliminationComponent from "./components/RemoveSingularRules/RemoveSingularRules";
 import UnreachableSymbolEliminationComponent from "./components/RemoveUnreachableSymbol/RemoveUnreachableSymbol";
 import UnreachableSymbolRemovalComponent from "./components/RemoveInaccesibleSymbol";
+import ChomskyNormalFormComponent from "./components/NormalFormChomsky/Chomsky";
+import ChomskyNormalFormConverter from "./components/NormalFormChomsky/Chomsky";
+import Home from "./components/Home/Home";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -30,6 +33,8 @@ root.render(
           path="/inaccesibile"
           element={<UnreachableSymbolRemovalComponent />}
         />
+        <Route path="/chomsky" element={<ChomskyNormalFormConverter />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

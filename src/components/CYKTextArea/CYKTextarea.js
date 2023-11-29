@@ -5,7 +5,7 @@ function CYKTextarea() {
   const [grammar, setGrammar] = useState("");
   const [word, setWord] = useState("");
   const [grammarInput, setGrammarInput] = useState(
-    "S -> AB | BC\nA -> BA | a\nB -> CC | b\nC -> AB | a",
+    "S → AB | BC\nA → BA | a\nB → CC | b\nC → AB | a",
   );
   const [wordInput, setWordInput] = useState("baaba");
 

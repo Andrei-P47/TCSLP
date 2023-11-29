@@ -2,7 +2,7 @@ function CYK(props) {
   let { grammar, word } = props;
   const lines = grammar.split("\n");
   let tokens = lines.map((line) => {
-    return line.split("->");
+    return line.split("→");
   });
 
   tokens = tokens.map((token) => {
