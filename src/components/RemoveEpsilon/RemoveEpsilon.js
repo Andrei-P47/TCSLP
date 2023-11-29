@@ -82,9 +82,12 @@ class EpsilonRemover {
 
 const EpsilonRemovalComponent = () => {
   const [originalGrammar, setOriginalGrammar] = useState({
-    S: ["O"],
-    O: ["(L", "("],
-    L: ["aO", "a)", ""],
+    S: ["abL"],
+    L: ["IX"],
+    X: ["", "dL"],
+    I: ["abA"],
+    A: ["dY"],
+    Y: ["", "cA"],
   });
 
   const [modifiedGrammar, setModifiedGrammar] = useState(null);
@@ -93,14 +96,6 @@ const EpsilonRemovalComponent = () => {
     const epsilonRemover = new EpsilonRemover(originalGrammar);
     epsilonRemover.findNullableVariables();
     epsilonRemover.removeEpsilons();
-
-    // let newObj = {};
-    //
-    // for (let key in epsilonRemover.grammar) {
-    //     if (epsilonRemover.grammar.hasOwnProperty(key) && Array.isArray(epsilonRemover.grammar[key])) {
-    //         newObj[key] = epsilonRemover.grammar[key].filter(element => element !== "");
-    //     }
-    // }
 
     setModifiedGrammar(epsilonRemover.grammar);
   };
@@ -112,7 +107,14 @@ const EpsilonRemovalComponent = () => {
 
       <button onClick={handleRemoveEpsilons}>Remove Epsilons</button>
       {modifiedGrammar ? (
-        <pre>{JSON.stringify(modifiedGrammar, null, 2)}</pre>
+        <>
+          <pre>{JSON.stringify(modifiedGrammar, null, 2)}</pre>
+          <p>
+            WARNING: Am eliminat epsilon dar daca mai este vreo valoare unde se
+            foloseste epsilon atunci dublam odata cu epsilon si odata fara de
+            epsilon
+          </p>
+        </>
       ) : (
         ""
       )}
