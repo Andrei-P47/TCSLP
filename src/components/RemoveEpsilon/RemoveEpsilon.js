@@ -87,7 +87,7 @@ class EpsilonRemover {
 const EpsilonRemovalComponent = () => {
   const [originalGrammar, setOriginalGrammar] = useState({
     S: ["abL"],
-    L: ["IX"],
+    L: ["IX", "I"],
     X: ["", "dL"],
     I: ["abA"],
     A: ["dY"],

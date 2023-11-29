@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CYKTextarea from "./components/CYKTextArea/CYKTextarea";
 import EpsilonRemovalComponent from "./components/RemoveEpsilon/RemoveEpsilon";
+import SingularRuleEliminationComponent from "./components/RemoveSingularRules/RemoveSingularRules";
+import UnreachableSymbolEliminationComponent from "./components/RemoveUnreachableSymbol/RemoveUnreachableSymbol";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -15,6 +17,11 @@ root.render(
       <Routes>
         <Route path="/cyk" element={<CYKTextarea />} />
         <Route path="/epsilon" element={<EpsilonRemovalComponent />} />
+        <Route
+          path="/singulare"
+          element={<SingularRuleEliminationComponent />}
+        />
+        <Route path="/" element={<UnreachableSymbolEliminationComponent />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
