@@ -4,6 +4,7 @@ class EpsilonRemover {
   constructor(grammar) {
     this.grammar = grammar;
     this.nullable = {};
+    this.epsilonVariables = [];
   }
 
   findNullableVariables() {
@@ -17,6 +18,9 @@ class EpsilonRemover {
           for (const production of this.grammar[variable]) {
             if (this.isProductionNullable(production)) {
               this.nullable[variable] = true;
+              if (!this.epsilonVariables.includes(variable)) {
+                this.epsilonVariables.push(variable);
+              }
               changed = true;
               break;
             }
@@ -91,6 +95,7 @@ const EpsilonRemovalComponent = () => {
   });
 
   const [modifiedGrammar, setModifiedGrammar] = useState(null);
+  const [epsilonVariables, setEpsilonVariables] = useState([]);
 
   const handleRemoveEpsilons = () => {
     const epsilonRemover = new EpsilonRemover(originalGrammar);
@@ -98,6 +103,7 @@ const EpsilonRemovalComponent = () => {
     epsilonRemover.removeEpsilons();
 
     setModifiedGrammar(epsilonRemover.grammar);
+    setEpsilonVariables(epsilonRemover.epsilonVariables);
   };
 
   return (
@@ -108,7 +114,14 @@ const EpsilonRemovalComponent = () => {
       <button onClick={handleRemoveEpsilons}>Remove Epsilons</button>
       {modifiedGrammar ? (
         <>
+          <h2>Modified Grammar</h2>
           <pre>{JSON.stringify(modifiedGrammar, null, 2)}</pre>
+          {epsilonVariables.length > 0 && (
+            <div>
+              <h2>Epsilon Variables</h2>
+              <pre>{JSON.stringify(epsilonVariables, null, 2)}</pre>
+            </div>
+          )}
           <p>
             WARNING: Am eliminat epsilon dar daca mai este vreo valoare unde se
             foloseste epsilon atunci dublam odata cu epsilon si odata fara de
