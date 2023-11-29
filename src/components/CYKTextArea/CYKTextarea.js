@@ -13,6 +13,9 @@ function CYKTextarea() {
     <div className="flex flex-row">
       <div className="w-1/4 p-4 max-h-screen">
         <div className="flex flex-col mb-3 mt-6">
+          <label className="block font-bold text-red-500  pr-4">
+            Trebuie sa fie in forma normala Chomsky
+          </label>
           <label className="block font-bold  pr-4">Cuvantul</label>
           <div className="w-full">
             <input
